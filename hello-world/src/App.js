@@ -4,6 +4,8 @@ import './App.css';
 import Products from './Products';
 import {Button} from 'react-bootstrap';
 import Rating from './Rating'
+import JumboTronComponent from './JumboTronComponent';
+
 class App extends Component {
 
   formatName(user){
@@ -17,7 +19,7 @@ class App extends Component {
 
 
       <div>
-<Products />
+<JumboTronComponent>This is my passed in string</JumboTronComponent>
 
 <div>
 

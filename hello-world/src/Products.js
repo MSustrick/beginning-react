@@ -10,6 +10,7 @@ class Products extends Component{
   this.products = this.getProducts();
 }
   getProducts(){
+    return []
     return[
       {
       imageUrl:"http://loremflickr.com/150/150?random=1",
@@ -58,10 +59,13 @@ class Products extends Component{
     return (
 
       <div>
+  {listProducts.length > 0 &&
+  <ul>{listProducts}</ul>}
 
-       <ul>{listProducts}</ul>
-
-      </div>
+  {listProducts.length == 0 &&
+    <ul>No Products to display</ul>
+  }
+    </div>
     );
   }
 }
