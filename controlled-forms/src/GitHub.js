@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import ReactLoading from 'react-loading';
 import {Media, Form, FormGroup, FormControl, Button} from 'react-bootstrap';
+import {Link} from 'react-router-dom';
 import UserForm from './UserForm';
 
 class GitHub extends Component{
@@ -51,9 +52,9 @@ this.setState({searchTerm:e.target.value})
     const listUsers = this.state.data.map((user) =>
             <Media key={user.id}>
             <Media.Left>
-                <a href={user.html_url}>
-                    <img width={64} height={64} src={user.avatar_url} alt="Image"/>
-                </a>
+                <Link to={`/github/user/${user.login}/${user.score}`} >
+                  <img width={64} height={64} src={user.avatar_url} alt="Image"/>
+                </Link>
             </Media.Left>
             <Media.Body>
                 <Media.Heading>{user.login}</Media.Heading>
